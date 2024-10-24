@@ -49,44 +49,26 @@ df0_health <- df1_deaf %>%
 df0_relationship <- df1_deaf %>%
   select(1, 52:54)
 
+##### 2.9  Transportation -------
+df0_transport <- df1_deaf %>%
+  select(1, 51, 80)
 
-# Rename columns
-df2_deaf <- df1_deaf %>% 
-  rename(
-    "languages" = "languages you use comfortably",
-    "date of birth"= "what is your date of birth?",
-    "contact method" = "best contact method for communication",
-    "tribe" = "which tribal affiliation do you identify with?",
-    "religion" = "which religion do you follow?",
-    "sexual orientation" = "do you identify as queer, gay, bisexual, lesbian, transgender, or asexual?",
-    "relationship status" = "describe your relationship status",
-    "partner deaf status" = "is your partner deaf?",
-    "occupation status" = "current occupation status",
-    "job type" = "what kind job do you have?",
-    "salary" = "how much money do you earn a month? (salary) [it is in niara currency]",
-    "number of jobs" = "how many jobs do you have?",
-    "days per week worked" = "how many days a week do you work?",
-    "yearly rent or mortgage" = "how much do you pay yearly for rent or mortage?",
-    "house ownership" = "do you own a house?",
-    "access to clean water" = "do you have access to clean water?",
-    "access to wash hands" = "do you have access to wash your hands?",
-    "enough to eat" = "do you feel like you have enough to eat?",
-    "diet supports health needs" = "do you feel that what you eat supports your health needs?",
-    "frequency fresh fruit or vegetables" = "- how often do you eat fresh fruit or vegetables?",
-    "is healthy food expensive" = "is healthy food expensive?",
-    "lack of transportation for healthy food" = "why are you not eating healthy foods? - i don't have the transportation to go shopping for healthy food",
-    "lack of time for healthy food preparation" = "why are you not eating healthy foods? - i don't have the time to shop for, and prepare healthy food",
-    "lack of cooking knowledge for healthy meals" = "why are you not eating healthy foods? - i don't know how to cook and prepare healthy meals",
-    "why are you not eating healthy foods? - i don't have the supplies and equipment i'd need to cook healthy food" = 
-    
-  )
+##### 2.10  Adverse Experiences(Trauma and Violence) -------
+df0_adverse <- df1_deaf %>%
+  select(1, 56:62)
 
-#### 2.0  Exploratory Data Analysis -------
+##### 2.11  Hearing Loss and Support -------
+df0_loss <- df1_deaf %>%
+  select(1, 63:79)
 
-##### 2.1  Demographics  -------
-# Gender/Sex
-df1_deaf %>%
-  group_by(sex) %>% 
-  summarise(N = n())
+##### 2.12  Accessiblity and Communication Support -------
+df0_communication <- df1_deaf %>%
+  select(1, 81:86, 101:103, 108)
 
-# 
+##### 2.13  Health Disorders and Protection -------
+df0_disorders <- df1_deaf %>%
+  select(1, 89:98)
+
+##### 2.14  Crisis and Emergency Preparedness -------
+df0_crisis <- df1_deaf %>%
+  select(1, 55, 104:107)
